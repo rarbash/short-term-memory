@@ -214,23 +214,28 @@ a {
   display: inline-block;
 }
 
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 .tooltip .tooltiptext {
   visibility: hidden;
   font-family: "Roboto", sans-serif;
-  width: 120px;
-  background-color: black;
+  width: 15em;
+  height: 5em;
+  padding: 20px;
+  background-color: #27187e;
   color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
   top: 10px;
   left: 105%;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
 }

@@ -1,3 +1,37 @@
+<?php
+  $mysqli = new mysqli("localhost", "root", null, "css326_shortMemoryGame");
+
+  if ($mysqli->connect_errno) {
+    echo $mysqli->connect_error;
+  }
+
+  $easy_sql = "SELECT * FROM question_set WHERE qset_id = 1";
+    $result = $mysqli->query($easy_sql);
+    if ($result){
+      $row = $result->fetch_array();
+      $easy_desc = $row["qset_description"];
+    } else {
+        echo "Error:" . $mysqli->error;
+    }
+
+    $medium_sql = "SELECT * FROM question_set WHERE qset_id = 2";
+    $result = $mysqli->query($medium_sql);
+    if ($result){
+      $row = $result->fetch_array();
+      $medium_desc = $row["qset_description"];
+    } else {
+        echo "Error:" . $mysqli->error;
+    }
+
+    $hard_sql = "SELECT * FROM question_set WHERE qset_id = 3";
+    $result = $mysqli->query($hard_sql);
+    if ($result){
+      $row = $result->fetch_array();
+      $hard_desc = $row["qset_description"];
+    } else {
+        echo "Error:" . $mysqli->error;
+    }
+?>
 <html>
   <link rel="stylesheet" href="style.css">
   <div style="display: flex; margin-top:3em;">
@@ -16,7 +50,7 @@
           <strong class="margin-btn">Easy</strong>
           <img src="icon/easy.png" alt="medal" class="iconsize-small">
         </button>
-        <span class="tooltiptext">easy mak mak</span>
+        <span class="tooltiptext"><?php echo $easy_desc;?></span>
       </a>
       <br><br><br>
       <!-- medium btn -->
@@ -26,7 +60,7 @@
           <strong class="margin-btn">Medium</strong>
           <img src="icon/medium.png" alt="medal" class="iconsize-small">
         </button>
-        <span class="tooltiptext">easy mak mak</span>
+        <span class="tooltiptext"><?php echo $medium_desc;?></span>
       </a>
       <br><br><br>
       <!-- hard btn -->
@@ -36,7 +70,7 @@
           <strong class="margin-btn">Hard</strong>
           <img src="icon/hard.png" alt="medal" class="iconsize-small">
         </button>
-        <span class="tooltiptext">easy mak mak</span>
+        <span class="tooltiptext"><?php echo $hard_desc;?></span>
       </a>
       </form>
   </div>
