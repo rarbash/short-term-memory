@@ -119,10 +119,9 @@ a {
   height: 70px;
 }
 
-.btn-easy-hover:hover {
+.btn-easy:hover {
   background-color: #709554;
   border: none;
-  transform: scale(1.08);
 }
 
 .btn-medium {
@@ -137,10 +136,9 @@ a {
   height: 70px;
 }
 
-.btn-medium-hover:hover {
+.btn-medium:hover {
   background-color: #a98737;
   border: none;
-  transform: scale(1.08);
 }
 
 .btn-hard {
@@ -155,10 +153,9 @@ a {
   height: 70px;
 }
 
-.btn-hard-hover:hover {
+.btn-hard:hover {
   background-color: #a92b2d;
   border: none;
-  transform: scale(1.08);
 }
 
 .btn-choice {
@@ -210,4 +207,30 @@ a {
   border-color: #27187e;
   border-style: solid;
   width: 50em;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  font-family: "Roboto", sans-serif;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
